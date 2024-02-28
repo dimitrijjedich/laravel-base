@@ -22,7 +22,9 @@ class CountryResource extends Resource
     protected static ?string $navigationLabel = 'Country';
 
     protected static ?string $modelLabel = 'Employees Countries';
-    
+
+    protected static ?string $navigationGroup = 'System Management';
+
     public static function form(Form $form): Form
     {
         return $form
