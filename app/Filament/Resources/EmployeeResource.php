@@ -33,16 +33,20 @@ class EmployeeResource extends Resource
                         Forms\Components\TextInput::make('middle_name')
                             ->required(),
                     ])->columns(3),
-                Forms\Components\TextInput::make('city_id')
-                    ->required()
-                    ->numeric(),
+                Forms\Components\Section::make('Employee address')
+                    ->schema([
+
+                        Forms\Components\TextInput::make('address')
+                            ->required(),
+                        Forms\Components\TextInput::make('zip_code')
+                            ->required(),
+                        Forms\Components\TextInput::make('city_id')
+                            ->required()
+                            ->numeric(),
+                    ])->columns(3),
                 Forms\Components\TextInput::make('department_id')
                     ->required()
                     ->numeric(),
-                Forms\Components\TextInput::make('address')
-                    ->required(),
-                Forms\Components\TextInput::make('zip_code')
-                    ->required(),
                 Forms\Components\DatePicker::make('date_of_birth')
                     ->required(),
                 Forms\Components\DatePicker::make('date_hired')
