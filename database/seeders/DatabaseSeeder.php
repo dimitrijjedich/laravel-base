@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\City;
 use App\Models\Country;
+use App\Models\Department;
 use App\Models\State;
 use Illuminate\Database\Seeder;
 
@@ -59,5 +60,15 @@ class DatabaseSeeder extends Seeder
         $bremenCity->name = 'Bremen';
         $bremenCity->state_id = $bremen->id;
         $bremenCity->save();
+
+        $sales = new Department;
+        $sales->name = 'Sales';
+        $sales->save();
+        $hr = new Department;
+        $hr->name = 'Human Resources';
+        $hr->save();
+        $production = new Department;
+        $production->name = 'Production';
+        $production->save();
     }
 }
