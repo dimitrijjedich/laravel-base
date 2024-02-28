@@ -32,7 +32,7 @@ class EmployeeResource extends Resource
                             ->required(),
                         Forms\Components\TextInput::make('middle_name')
                             ->required(),
-                    ]),
+                    ])->columns(3),
                 Forms\Components\TextInput::make('city_id')
                     ->required()
                     ->numeric(),
