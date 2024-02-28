@@ -36,7 +36,7 @@ class CityResource extends Resource
                     ->numeric(),
                 Forms\Components\TextInput::make('name')
                     ->required(),
-            ]);
+            ])->columns(1);
     }
 
     public static function table(Table $table): Table

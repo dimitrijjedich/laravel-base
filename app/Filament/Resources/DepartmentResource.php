@@ -33,7 +33,7 @@ class DepartmentResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required(),
-            ]);
+            ])->columns(1);
     }
 
     public static function table(Table $table): Table
