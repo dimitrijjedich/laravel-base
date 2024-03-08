@@ -42,13 +42,17 @@ class EmployeeResource extends Resource
                             ->required(),
                         Forms\Components\TextInput::make('zip_code')
                             ->required(),
-                        Forms\Components\TextInput::make('city_id')
-                            ->required()
-                            ->numeric(),
+                        Forms\Components\Select::make('city_id')
+                            ->relationship('city', 'name')
+                            ->searchable()
+                            ->preload()
+                            ->required(),
                     ])->columns(3),
-                Forms\Components\TextInput::make('department_id')
-                    ->required()
-                    ->numeric(),
+                Forms\Components\Select::make('department_id')
+                    ->relationship('department', 'name')
+                    ->searchable()
+                    ->preload()
+                    ->required(),
                 Forms\Components\DatePicker::make('date_of_birth')
                     ->required(),
                 Forms\Components\DatePicker::make('date_hired')
