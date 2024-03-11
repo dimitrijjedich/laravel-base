@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\User;
+use Database\Seeders\DatabaseSeeder;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +21,14 @@ Route::get('/', function () {
 
 Route::get('test', function () {
     return "It works!";
+});
+
+Route::get('seed', function () {
+    (new DatabaseSeeder())->run();
+    return "It worked";
+});
+
+Route::get('users', function () {
+    $users = User::all();
+    return json_encode($users);
 });
