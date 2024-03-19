@@ -13,4 +13,9 @@ class Token extends Model
     protected $guarded = [];
 
     protected $connection = 'pgsql';
+
+    public function user(): BelongsTo
+    {
+        return $this->setConnection('mysql')->belongsTo(User::class);
+    }
 }
